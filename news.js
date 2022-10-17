@@ -9,7 +9,6 @@ const displayLoadUrlData = (datas) => {
     const linkContainer = document.getElementById('links');
     linkContainer.textContent = '';
     datas.forEach(data => {
-        // console.log(data.category_name)
         const div = document.createElement('div');
         div.innerHTML = `
         <div onclick="loadCategoriesData('${data.category_id}')">${data.category_name}</div>
@@ -120,7 +119,6 @@ const loadDeatils = (id) => {
 }
 
 const displayLoadDetails = (detail) => {
-    console.log(detail);
     const detailContainer = document.getElementById('details-field');
     detailContainer.innerHTML = `
     <h5>Title : ${detail.title}</h5>
@@ -129,7 +127,7 @@ const displayLoadDetails = (detail) => {
     `;
 
 }
-
+// some question answers here
 const someAnswers = document.getElementById('some-answers');
 someAnswers.innerHTML = `
 <h3 class="text-primary">What is difference between var, let and const in JavaScript?</h3>
