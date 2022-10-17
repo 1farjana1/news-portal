@@ -4,12 +4,3 @@ body {
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Slab', serif;
 }
-
-.text {
-    white-space: wrap;
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 700px;
-    height: 150px;
-}
