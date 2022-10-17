@@ -48,7 +48,7 @@ const displayCategoriesData = (categories) => {
 
     if (!categories.length) {
         const errorMassage = document.getElementById('error-massage');
-        errorMassage.innerText = "no found";
+        errorMassage.innerHTML = `<h1>Sorry...! No data found...Please click a another one..Thank you...</h1>`;
         return;
     }
     const inputField = document.getElementById('input-field');
