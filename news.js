@@ -44,15 +44,19 @@ const displayCategoriesData = (categories) => {
     newsField.textContent = '';
 
     categories.sort(function (a, b) { return b.total_view - a.total_view });
+    const inputField = document.getElementById('input-field');
+    const inputStringValue = inputField.value;
+    inputField.value = categories.length + ` items found for categories`;
+    const errorMassage = document.getElementById('error-massage');
+    errorMassage.value = 0;
 
     if (!categories.length) {
         const errorMassage = document.getElementById('error-massage');
         errorMassage.innerHTML = `<h1>Sorry...! No data found...Please click a another one..Thank you...</h1>`;
         return;
     }
-    const inputField = document.getElementById('input-field');
-    const inputStringValue = inputField.value;
-    inputField.value = categories.length;
+
+
     categories.forEach(category => {
         const categorydiv = document.createElement('div');
         const { image_url, title, details, author, total_view, rating, _id, thumbnail_url } = category;
@@ -61,10 +65,10 @@ const displayCategoriesData = (categories) => {
         categorydiv.innerHTML = `
         <section onclick=loadDeatils('${_id}') class="container mt-5">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 ps-4 pb-0 pe-0  bg-light d-flex align-items-center">
+            <div class="col-lg-5 col-md-6 col-sm-12 ps-4 pb-0 pe-0  bg-light d-flex align-items-center">
                 <img style="height: 550px; width:500px;" class="img-fluid p-5" src="${thumbnail_url}" alt="">
             </div>
-            <div style="height: 580px;" class="ps-0 col-lg-9 col-md-6 bg-light d-flex align-items-center column">
+            <div style="height: 580px;" class="ps-0 col-lg-7 col-md-6 bg-light d-flex align-items-center column">
                 <div class="p-3">
                     <div class="mb-5">
                         <h2 class="fw-bold">${title}</h2>
