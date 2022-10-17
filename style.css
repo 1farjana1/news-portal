@@ -13,16 +13,3 @@ body {
     width: 700px;
     height: 150px;
 }
-
-@media (min-width: 576px) {
-    .column {
-        display: flex;
-        flex-direction: row;
-
-    }
-
-    .alignment {
-        display: flex;
-        flex-direction: column;
-    }
-}
