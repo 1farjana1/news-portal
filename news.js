@@ -11,7 +11,6 @@ const displayLoadUrlData = (datas) => {
     datas.forEach(data => {
         // console.log(data.category_name)
         const div = document.createElement('div');
-        div.classList.add('alignment');
         div.innerHTML = `
         <div onclick="loadCategoriesData('${data.category_id}')">${data.category_name}</div>
         
@@ -40,7 +39,7 @@ const loadCategoriesData = (id) => {
 }
 
 const displayCategoriesData = (categories) => {
-    // console.log(categories)
+    console.log(categories.length)
     processSearch(false);
     const newsField = document.getElementById('news-field');
     newsField.textContent = '';
@@ -52,7 +51,9 @@ const displayCategoriesData = (categories) => {
         errorMassage.innerText = "no found";
         return;
     }
-
+    const inputField = document.getElementById('input-field');
+    const inputStringValue = inputField.value;
+    inputField.value = categories.length;
     categories.forEach(category => {
         const categorydiv = document.createElement('div');
         const { image_url, title, details, author, total_view, rating, _id, thumbnail_url } = category;
