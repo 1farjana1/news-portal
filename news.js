@@ -44,6 +44,8 @@ const displayCategoriesData = (categories) => {
     newsField.textContent = '';
 
     categories.sort(function (a, b) { return b.total_view - a.total_view });
+
+    
     const inputField = document.getElementById('input-field');
     const inputStringValue = inputField.value;
     inputField.value = categories.length + ` items found for categories`;
@@ -92,7 +94,7 @@ const displayCategoriesData = (categories) => {
                              <p>${rating.number}M</p>
                            </div>
                         </div>
-                        <div class="pt-3">
+                        <div class="pt-4">
                              <i class="fa-regular fa-star-half-stroke"></i>
                              <i class="fa-regular fa-star"></i>
                              <i class="fa-regular fa-star"></i>
